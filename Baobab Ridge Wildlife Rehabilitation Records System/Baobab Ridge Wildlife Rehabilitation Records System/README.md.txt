@@ -1,10 +1,10 @@
 # Baobab Ridge Wildlife Rehabilitation Centre
 
 ## Team Members
-- Member 1 – [Your Name] – [Student Number] – Core Setup & Add Feature
-- Member 2 – [Name] – [Student Number] – View Feature
-- Member 3 – [Name] – [Student Number] – Update & Delete
-- Member 4 – [Name] – [Student Number] – Summary Report & Integration
+- Member 1 – Snawo Nonkomo – 605092 – Core Setup & Add Feature
+- Member 2 – Kealeboga Ramongae – 604861 – View Feature
+- Member 3 – Keanon Tities – 603801 – Update & Delete
+- Member 4 – Nkosinathi Jaden Repinga – 604916 – Summary Report & Integration
 
 ## How to Build and Run
 1. Clone this repository.
