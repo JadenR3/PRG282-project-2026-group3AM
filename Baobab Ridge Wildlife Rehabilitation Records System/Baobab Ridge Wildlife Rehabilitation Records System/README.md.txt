@@ -2,7 +2,7 @@
 
 ## Team Members
 - Member 1 – Snawo Nonkomo – 605092 – Core Setup & Add Feature
-- Member 2 – Kealeboga Ramongae – 604861 – View Feature
+- Member 2 – Kealeboga Ramongane – 604861 – View Feature
 - Member 3 – Keanon Tities – 603801 – Update & Delete
 - Member 4 – Nkosinathi Jaden Repinga – 604916 – Summary Report & Integration
 
