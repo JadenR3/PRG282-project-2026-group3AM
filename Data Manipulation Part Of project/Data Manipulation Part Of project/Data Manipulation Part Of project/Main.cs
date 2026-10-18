@@ -24,7 +24,65 @@ namespace Data_Manipulation_Part_Of_project
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
-        {
+        {        
+            if (!int.TryParse(tbScore.Text, out int score))
+            {
+                MessageBox.Show("Please enter a valid recovery score.");
+                tbScore.Focus();
+                return;
+            }
+
+            if (!int.TryParse(tbScore.Text, out int score))
+            {
+                MessageBox.Show("Please enter a valid recovery score.");
+                tbScore.Focus();
+                return;
+            }
+
+            if (!Regex.IsMatch(tbAnimalID.Text.ToUpper().Trim(), @"^WR-\d{4}$"))
+            {
+                MessageBox.Show("Example of ID: WR-0001");
+                return;
+            }
+
+            //Validating Name
+            if (tbName.Text.Trim().Length <= 0 || tbName.Text.Trim().Length > 30)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Name must be betweem 1-30 Characters");
+                MessageBox.Show("Name cannot contain '|'");
+
+                return;
+            }
+
+
+            //Validating Species
+            if (tbSpecies.Text.Trim().Length <= 0 || tbSpecies.Text.Trim().Length > 30)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Species must be betweem 1-30 Characters");
+                MessageBox.Show("Species cannot contain '|'");
+
+                return;
+            }
+
+
+            //Validating Age
+            if (tbAge.Text.Trim() == "" || !int.TryParse(tbAge.Text.Trim(), out int age) || age > 100 || age < 0)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Age must be a whole number between 0-100");
+                return;
+            }
+
+            //Validating Recovery Score
+            if (tbScore.Text.Trim() == "" || !int.TryParse(tbScore.Text.Trim(), out int recoveryscore) || recoveryscore > 100 || recoveryscore < 0)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Score must be a whole number between 0-100");
+                return;
+            }
+            
             animal.animalID = tbAnimalID.Text;
             animal.name = tbName.Text;
             animal.species = tbSpecies.Text;
@@ -95,6 +153,12 @@ namespace Data_Manipulation_Part_Of_project
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+             if (!Regex.IsMatch(tbAnimalID.Text.ToUpper().Trim(), @"^WR-\d{4}$"))
+            {
+                MessageBox.Show("Example of ID: WR-0001");
+                return;
+            }
+            
             animal.animalID = tbAnimalID.Text;
             animal.name = tbName.Text;
             animal.species = tbSpecies.Text;
@@ -150,6 +214,57 @@ namespace Data_Manipulation_Part_Of_project
             {
                 MessageBox.Show("Please enter a valid recovery score.");
                 tbScore.Focus();
+                return;
+            }
+
+            if (!int.TryParse(tbScore.Text, out int score))
+            {
+                MessageBox.Show("Please enter a valid recovery score.");
+                tbScore.Focus();
+                return;
+            }
+
+            if (!Regex.IsMatch(tbAnimalID.Text.ToUpper().Trim(), @"^WR-\d{4}$"))
+            {
+                MessageBox.Show("Example of ID: WR-0001");
+                return;
+            }
+
+            //Validating Name
+            if (tbName.Text.Trim().Length <= 0 || tbName.Text.Trim().Length > 30)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Name must be betweem 1-30 Characters");
+                MessageBox.Show("Name cannot contain '|'");
+
+                return;
+            }
+
+
+            //Validating Species
+            if (tbSpecies.Text.Trim().Length <= 0 || tbSpecies.Text.Trim().Length > 30)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Species must be betweem 1-30 Characters");
+                MessageBox.Show("Species cannot contain '|'");
+
+                return;
+            }
+
+
+            //Validating Age
+            if (tbAge.Text.Trim() == "" || !int.TryParse(tbAge.Text.Trim(), out int age) || age > 100 || age < 0)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Age must be a whole number between 0-100");
+                return;
+            }
+
+            //Validating Recovery Score
+            if (tbScore.Text.Trim() == "" || !int.TryParse(tbScore.Text.Trim(), out int recoveryscore) || recoveryscore > 100 || recoveryscore < 0)
+            {
+                MessageBox.Show("Invalid Input: ");
+                MessageBox.Show("Score must be a whole number between 0-100");
                 return;
             }
 
