@@ -35,12 +35,12 @@ namespace Baobab_Ridge_Wildlife_Rehabilitation_Records_System
            
             try
             {
-                if (string.IsNullOrEmpty(AnimalName) || string.IsNullOrEmpty(Species))
-                {
-                    MessageBox.Show("Please enter both Animal Name and Species.");
+                if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtSpecies.Text)
+                { 
+                    MessageBox.Show("Animal Name and Species cannot be empty or contain only whitespace.");
                     return;
                 }
-                
+
                 if (!int.TryParse(txtAge.Text, out int Age) || Age < 0 || Age > 100)
                 {
                     MessageBox.Show("Please enter a number between 0 and 100 for Age.");
