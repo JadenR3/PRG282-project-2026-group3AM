@@ -35,7 +35,7 @@ namespace Baobab_Ridge_Wildlife_Rehabilitation_Records_System
            
             try
             {
-                if (string.IsNullOrWhiteSpaqce(txtName.Text) || string.IsNullOrWhiteSpace(txtSpecies.Text)
+                if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtSpecies.Text)
                 { 
                     MessageBox.Show("Animal Name and Species cannot be empty or contain only whitespace.");
                     return;
