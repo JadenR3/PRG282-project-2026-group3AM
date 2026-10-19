@@ -1,7 +1,0 @@
-#Visual Studio user files & cache
-.vs/
-bin/
-obj/
-
-#Generated files
-summary.txt
