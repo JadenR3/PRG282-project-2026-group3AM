@@ -1,0 +1,33 @@
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data_Manipulation_Part_Of_project.Main.resources
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.csproj.GenerateResource.cache
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.AssemblyInfoInputs.cache
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.AssemblyInfo.cs
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.csproj.CoreCompileInputs.cache
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.exe
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.deps.json
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.runtimeconfig.json
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.dll
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.pdb
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.dll
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\refint\Data Manipulation Part Of project.dll
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.pdb
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.genruntimeconfig.cache
+C:\Users\keano\source\repos\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\ref\Data Manipulation Part Of project.dll
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.exe
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.deps.json
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.runtimeconfig.json
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.dll
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\bin\Debug\net10.0-windows\Data Manipulation Part Of project.pdb
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data_Manipulation_Part_Of_project.Main.resources
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.csproj.GenerateResource.cache
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.AssemblyInfoInputs.cache
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.AssemblyInfo.cs
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.csproj.CoreCompileInputs.cache
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.dll
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\refint\Data Manipulation Part Of project.dll
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.pdb
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Manipulation Part Of project.genruntimeconfig.cache
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\ref\Data Manipulation Part Of project.dll
+C:\Users\keano\Downloads\Data Manipulation Part Of project\Data Manipulation Part Of project\Data Manipulation Part Of project\obj\Debug\net10.0-windows\Data Man.00F9DA7A.Up2Date
