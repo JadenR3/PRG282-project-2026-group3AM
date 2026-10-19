@@ -141,6 +141,7 @@ namespace Data_Manipulation_Part_Of_project
             tbScore.Clear();
             tbStatus.Clear();
             tbHousingUnit.Clear();
+            tbSearch.Clear();            
 
             DataTable dataTable = new DataTable();
             dataTable = animal.GetAll();
