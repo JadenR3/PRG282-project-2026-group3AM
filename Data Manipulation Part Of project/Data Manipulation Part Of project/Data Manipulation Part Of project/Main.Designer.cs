@@ -223,6 +223,7 @@
             btnGenerateSummary.TabIndex = 19;
             btnGenerateSummary.Text = "Generate Summary";
             btnGenerateSummary.UseVisualStyleBackColor = true;
+            btnGenerateSummary.Click += btnGenerateSummary_Click;
             // 
             // btnSearch
             // 

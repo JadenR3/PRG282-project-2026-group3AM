@@ -1,10 +1,12 @@
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Data_Manipulation_Part_Of_project
 {
     public partial class Main : Form
     {
         Animal animal = new Animal();
+        SummaryForm summaryForm = new SummaryForm();
         public Main()
         {
             InitializeComponent();
@@ -24,14 +26,7 @@ namespace Data_Manipulation_Part_Of_project
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
-        {        
-            if (!int.TryParse(tbScore.Text, out int score))
-            {
-                MessageBox.Show("Please enter a valid recovery score.");
-                tbScore.Focus();
-                return;
-            }
-
+        {
             if (!int.TryParse(tbScore.Text, out int score))
             {
                 MessageBox.Show("Please enter a valid recovery score.");
@@ -82,11 +77,11 @@ namespace Data_Manipulation_Part_Of_project
                 MessageBox.Show("Score must be a whole number between 0-100");
                 return;
             }
-            
+
             animal.animalID = tbAnimalID.Text;
             animal.name = tbName.Text;
             animal.species = tbSpecies.Text;
-            animal.age = int.TryParse(tbAge.Text, out int age) ? age : 0;
+            animal.age = int.TryParse(tbAge.Text, out age) ? age : 0;
             animal.status = tbStatus.Text;
             animal.housingUnit = tbHousingUnit.Text;
 
@@ -141,7 +136,7 @@ namespace Data_Manipulation_Part_Of_project
             tbScore.Clear();
             tbStatus.Clear();
             tbHousingUnit.Clear();
-            tbSearch.Clear();            
+            tbSearch.Clear();
 
             DataTable dataTable = new DataTable();
             dataTable = animal.GetAll();
@@ -154,12 +149,12 @@ namespace Data_Manipulation_Part_Of_project
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-             if (!Regex.IsMatch(tbAnimalID.Text.ToUpper().Trim(), @"^WR-\d{4}$"))
+            if (!Regex.IsMatch(tbAnimalID.Text.ToUpper().Trim(), @"^WR-\d{4}$"))
             {
                 MessageBox.Show("Example of ID: WR-0001");
                 return;
             }
-            
+
             animal.animalID = tbAnimalID.Text;
             animal.name = tbName.Text;
             animal.species = tbSpecies.Text;
@@ -218,7 +213,7 @@ namespace Data_Manipulation_Part_Of_project
                 return;
             }
 
-            if (!int.TryParse(tbScore.Text, out int score))
+            if (!int.TryParse(tbScore.Text, out score))
             {
                 MessageBox.Show("Please enter a valid recovery score.");
                 tbScore.Focus();
@@ -272,7 +267,7 @@ namespace Data_Manipulation_Part_Of_project
             animal.animalID = tbAnimalID.Text.Trim();
             animal.name = tbName.Text.Trim();
             animal.species = tbSpecies.Text.Trim();
-            animal.age = int.TryParse(tbAge.Text, out int age) ? age : 0;
+            animal.age = int.TryParse(tbAge.Text, out age) ? age : 0;
             animal.score = score;
 
             animal.CalculateClassification();
@@ -289,6 +284,12 @@ namespace Data_Manipulation_Part_Of_project
             {
                 MessageBox.Show("Failed to add animal data.");
             }
+        }
+
+        private void btnGenerateSummary_Click(object sender, EventArgs e)
+        {
+            animal.GenerateSummary();
+            summaryForm.ShowDialog();
         }
     }
 }

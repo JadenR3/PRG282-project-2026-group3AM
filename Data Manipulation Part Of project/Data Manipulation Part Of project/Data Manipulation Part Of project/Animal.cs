@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Text;
 
 namespace Data_Manipulation_Part_Of_project
@@ -160,8 +161,8 @@ namespace Data_Manipulation_Part_Of_project
                 {
 
                     updated.CalculateClassification(); // Ensure status and housingUnit are updated based on the new score
+                    
                     // Reconstruct the line with all 7 fields in required order, separated by '|'
-                    // ID | Name | Species | Age | Score | Status | Housing Unit
                     lines[i] = $"{updated.animalID}|{updated.name}|{updated.species}|{updated.age}|{updated.score}|{updated.status}|{updated.housingUnit}";
                     found = true;
                     break;
@@ -298,6 +299,100 @@ namespace Data_Manipulation_Part_Of_project
                 Console.WriteLine($"Error adding animal: {ex.Message}");
                 return false;
             }
+        }
+
+        public bool GenerateSummary()
+        {
+            string filePath = Path.Combine(Application.StartupPath, "animals.txt");
+
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("The file animals.txt does not exist. Creating a new file...");
+                File.WriteAllText(filePath,""); // Create an empty file
+                return false;
+            }
+
+            List<string> lines;
+            try
+            {
+                lines = File.ReadAllLines(filePath).ToList();
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"Could not access animals.txt |\nError: {ex.Message}");
+                return false;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show($"Could not access animals.txt due to insufficient permissions or the file being read-only |\nError: {ex.Message}");
+                return false;
+            }
+
+            int totalAnimals = 0;
+            int totalAge = 0;
+            int totalScore = 0;
+
+            int criticalCount = 0;
+            int seriousCount = 0;
+            int stableCount = 0;
+            int recoveringCount = 0;
+            int releaseReadyCount = 0;
+
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split('|');
+
+                totalAnimals++;
+                totalAge += int.Parse(parts[3]);
+                totalScore += int.Parse(parts[4]);
+
+                switch (parts[5])
+                {
+                    case "Critical":
+                        criticalCount++;
+                        break;
+                    case "Serious":
+                        seriousCount++;
+                        break;
+                    case "Stable":
+                        stableCount++;
+                        break;
+                    case "Recovering":
+                        recoveringCount++;
+                        break;
+                    case "Release Ready":
+                        releaseReadyCount++;
+                        break;
+                }
+            }
+
+            if (totalAnimals == 0)
+            {
+                MessageBox.Show("No animal data available.");
+                return false;
+            }
+
+            double averageAge = totalAnimals > 0 ? Math.Round((double)totalAge / totalAnimals, 2) : 0;
+            double averageScore = totalAnimals > 0 ? Math.Round((double)totalScore / totalAnimals, 2) : 0;
+
+            string summaryData = "BAOBAB RIDGE WILDLIFE REHABILITATION CENTRE\n" +
+                                $"ANIMAL SUMMARY REPORT\n" +
+                                $"Generated: {DateTime.Now:yyyy-MM-dd HH:mm}\n" +
+                                "----------------------------------------\n" +
+                                $"Total animals:            {totalAnimals}\n" +
+                                $"Average age (years):      {averageAge.ToString("F2", CultureInfo.InvariantCulture)}\n" +
+                                $"Average recovery score:   {averageScore.ToString("F2", CultureInfo.InvariantCulture)}\n" +
+                                "----------------------------------------\n" +
+                                $"Animals per status:\n" +
+                                $"Critical:                 {criticalCount}\n" +
+                                $"Serious:                  {seriousCount}\n" +
+                                $"Stable:                   {stableCount}\n" +
+                                $"Recovering:               {recoveringCount}\n" +
+                                $"Release-Ready:            {releaseReadyCount}";
+
+            File.WriteAllText(Path.Combine(Application.StartupPath, "summary.txt"), summaryData);
+
+            return true;
         }
 
         public void CalculateClassification()
