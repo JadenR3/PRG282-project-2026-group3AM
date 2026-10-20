@@ -18,6 +18,7 @@
 - Update an existing animal
 - Delete an animal
 - Generate summary report (summary.txt)
+- Search by ID
 
 ## File Formats
 - **animals.txt**: 7 pipe-separated fields (ID|Name|Species|Age|Score|Status|Housing Unit). ID format is WR-####; the hashes being integer values
