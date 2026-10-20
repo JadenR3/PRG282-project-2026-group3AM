@@ -8,7 +8,7 @@
 
 ## How to Build and Run
 1. Clone this repository.
-2. Open `BaobabRidge.sln` in Visual Studio 2022.
+2. Open `Data Manipulation Part Of project.sln` in Visual Studio 2022.
 3. Build the solution (Ctrl + Shift + B).
 4. Run (F5). The app opens with data loaded from `animals.txt`.
 
