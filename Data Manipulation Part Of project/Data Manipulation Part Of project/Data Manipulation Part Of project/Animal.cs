@@ -398,30 +398,35 @@ namespace Data_Manipulation_Part_Of_project
         public void CalculateClassification()
         {
 
-            if (score <= 18)
+            if (score >= 0 && score <= 19)
             {
                 status = "Critical";
                 housingUnit = "Intensive Care Unit";
             }
-            else if (score <= 39)
+            else if ( score >= 20 && score <= 39)
             {
                 status = "Serious";
                 housingUnit = "High-Dependency Ward";
             }
-            else if (score <= 59)
+            else if ( score >= 40 && score <= 59)
             {
                 status = "Stable";
                 housingUnit = "Recovery Ward";
             }
-            else if (score <= 79)
+            else if (score >= 60 && score <= 79)
             {
                 status = "Recovering";
-                housingUnit = "General Care Area";
+                housingUnit = "Outdoor Enclosure";
+            }
+            else if (score >= 80 && score <= 100)
+            {
+                status = "Release-Ready ";
+                housingUnit = "Pre-Release Camp";
             }
             else
             {
-                status = "Stable";
-                housingUnit = "General Care Area";
+                status = "N/A";
+                housingUnit = "N/A";
             }
         }
 

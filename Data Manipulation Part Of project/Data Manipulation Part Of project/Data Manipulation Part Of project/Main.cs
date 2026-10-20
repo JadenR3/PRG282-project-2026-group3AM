@@ -6,7 +6,6 @@ namespace Data_Manipulation_Part_Of_project
     public partial class Main : Form
     {
         Animal animal = new Animal();
-        SummaryForm summaryForm = new SummaryForm();
         public Main()
         {
             InitializeComponent();
@@ -82,8 +81,12 @@ namespace Data_Manipulation_Part_Of_project
             animal.name = tbName.Text;
             animal.species = tbSpecies.Text;
             animal.age = int.TryParse(tbAge.Text, out age) ? age : 0;
-            animal.status = tbStatus.Text;
-            animal.housingUnit = tbHousingUnit.Text;
+            animal.score = int.TryParse(tbScore.Text, out recoveryscore) ? recoveryscore : 0;
+
+            animal.CalculateClassification();
+
+            tbStatus.Text = animal.status;
+            tbHousingUnit.Text = animal.housingUnit;
 
             bool isUpdated = animal.UpdateAnimal(animal);
 
@@ -157,10 +160,7 @@ namespace Data_Manipulation_Part_Of_project
 
             animal.animalID = tbAnimalID.Text;
             animal.name = tbName.Text;
-            animal.species = tbSpecies.Text;
-            animal.age = int.TryParse(tbAge.Text, out int age) ? age : 0;
-            animal.status = tbStatus.Text;
-            animal.housingUnit = tbHousingUnit.Text;
+
 
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {animal.name}, animal {animal.animalID}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -288,13 +288,11 @@ namespace Data_Manipulation_Part_Of_project
 
         private void btnGenerateSummary_Click(object sender, EventArgs e)
         {
-         
-
-            bool success = animal.GenerateSummary();
-
-            if (success)
+            bool generate = animal.GenerateSummary();
+            // Check if the summary generation was successful and summary.txt file was created
+            if (generate)
             {
-                // Create a NEW instance so the constructor runs after the file is created
+                // Open the SummaryForm as a modal 
                 using (SummaryForm summaryForm = new SummaryForm())
                 {
                     summaryForm.ShowDialog();
