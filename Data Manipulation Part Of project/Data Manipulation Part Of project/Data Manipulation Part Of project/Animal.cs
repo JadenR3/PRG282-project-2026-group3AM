@@ -273,7 +273,7 @@ namespace Data_Manipulation_Part_Of_project
         {
             try
             {
-                string filePath = "Animals.txt";
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory    , "animals.txt");
                 if (File.Exists(filePath))
                 {
                     string[] lines = File.ReadAllLines(filePath);
@@ -281,9 +281,9 @@ namespace Data_Manipulation_Part_Of_project
                     foreach (string line in lines)
                     {
                         string[] parts = line.Split('|');
-                        if (parts.Length >= 7 && parts[0].Trim().Equals(name, StringComparison.OrdinalIgnoreCase))
+                        if (parts.Length == 7 && parts[0].Trim().Equals(animalID.Trim(), StringComparison.OrdinalIgnoreCase))
                         {
-                            Console.WriteLine("Animal with the same name already exists.");
+                            Console.WriteLine("Animal with the same ID already exists.");
                             return false;
                         }
                     }
