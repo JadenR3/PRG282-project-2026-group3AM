@@ -14,6 +14,7 @@ namespace Data_Manipulation_Part_Of_project
         {
             InitializeComponent();
 
+            // Load the summary from the text file
             string summaryPath = Path.Combine(Application.StartupPath, "summary.txt");
             if (!File.Exists(summaryPath))
             {

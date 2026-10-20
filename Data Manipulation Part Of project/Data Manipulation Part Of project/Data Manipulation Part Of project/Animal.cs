@@ -18,6 +18,7 @@ namespace Data_Manipulation_Part_Of_project
 
         public DataTable GetAll()
         {
+            // Create a DataTable to hold the animal data
             DataTable dt = new DataTable();
             dt.Columns.Add("Animal ID");       
             dt.Columns.Add("Name");
@@ -27,7 +28,7 @@ namespace Data_Manipulation_Part_Of_project
             dt.Columns.Add("Status");   
             dt.Columns.Add("Housing Unit");
 
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "animals.txt");
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "animals.txt");// Get the full path to the animals.txt file
 
             if (!File.Exists(filePath))
             {
@@ -40,7 +41,7 @@ namespace Data_Manipulation_Part_Of_project
             List<string> lines;
             try
             {
-                lines = File.ReadAllLines(filePath).ToList();
+                lines = File.ReadAllLines(filePath).ToList();//
             }
             catch (IOException ex)
             {
@@ -97,8 +98,9 @@ namespace Data_Manipulation_Part_Of_project
                 MessageBox.Show($"Could not access animals.txt due to insufficient permissions or the file being read-only |\nError: {ex.Message}");
                 return dt;
             }
-            // Populate the DataTable with data from the file
-            foreach (var line in lines)
+
+            // Populate the DataTable dt with matched animal data from the file after searching for the animal ID
+            foreach (string line in lines)
             {
                 string[] parts = line.Split('|');
 
@@ -212,7 +214,7 @@ namespace Data_Manipulation_Part_Of_project
             }
             catch (IOException ex)
             {
-                MessageBox.Show($"Could not access animals.txt \nError: {ex.Message}");
+                MessageBox.Show($"Could not access animals.txt |\nError: {ex.Message}");
                 return false;
             }
             catch (UnauthorizedAccessException ex)
@@ -273,7 +275,7 @@ namespace Data_Manipulation_Part_Of_project
         {
             try
             {
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory    , "animals.txt");
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "animals.txt");
                 if (File.Exists(filePath))
                 {
                     string[] lines = File.ReadAllLines(filePath);
@@ -281,7 +283,8 @@ namespace Data_Manipulation_Part_Of_project
                     foreach (string line in lines)
                     {
                         string[] parts = line.Split('|');
-                        if (parts.Length == 7 && parts[0].Trim().Equals(animalID.Trim(), StringComparison.OrdinalIgnoreCase))
+                        // Check if the line has the expected number of parts and if the animal ID matches
+                        if (parts.Length == 7 && parts[0].ToUpper().Trim().Equals(animalID.ToUpper().Trim(), StringComparison.OrdinalIgnoreCase))
                         {
                             Console.WriteLine("Animal with the same ID already exists.");
                             return false;
@@ -291,7 +294,7 @@ namespace Data_Manipulation_Part_Of_project
 
                 CalculateClassification();
                 string animalData = $"{animalID}|{name}|{species}|{age}|{score}|{status}|{housingUnit}";
-                File.AppendAllText(filePath, animalData + Environment.NewLine);
+                File.AppendAllText(filePath, animalData + Environment.NewLine);// Append the new animal data to the file
                 return true;
             }
             catch (Exception ex)
@@ -327,7 +330,7 @@ namespace Data_Manipulation_Part_Of_project
                 MessageBox.Show($"Could not access animals.txt due to insufficient permissions or the file being read-only |\nError: {ex.Message}");
                 return false;
             }
-
+            // Initialize counters and accumulators
             int totalAnimals = 0;
             int totalAge = 0;
             int totalScore = 0;
@@ -372,6 +375,7 @@ namespace Data_Manipulation_Part_Of_project
                 return false;
             }
 
+            // Calculate averages and round to 2 decimal places
             double averageAge = totalAnimals > 0 ? Math.Round((double)totalAge / totalAnimals, 2) : 0;
             double averageScore = totalAnimals > 0 ? Math.Round((double)totalScore / totalAnimals, 2) : 0;
 
@@ -390,7 +394,7 @@ namespace Data_Manipulation_Part_Of_project
                                 $"Recovering:               {recoveringCount}\n" +
                                 $"Release-Ready:            {releaseReadyCount}";
 
-            File.WriteAllText(Path.Combine(Application.StartupPath, "summary.txt"), summaryData);
+            File.WriteAllText(Path.Combine(Application.StartupPath, "summary.txt"), summaryData); // Write the summary to a text file
 
             return true;
         }

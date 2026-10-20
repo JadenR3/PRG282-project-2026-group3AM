@@ -14,10 +14,12 @@ namespace Data_Manipulation_Part_Of_project
             dataTable = animal.GetAll();
             dgvAnimalData.DataSource = dataTable;
 
+            // Set the DataGridView to be read-only and disable adding or deleting rows
             dgvAnimalData.ReadOnly = true;
             dgvAnimalData.AllowUserToAddRows = false;
             dgvAnimalData.AllowUserToDeleteRows = false;
 
+            // Set the Animal ID text box to be editable and enable the Add button, disable the Save Changes button; deactivating edit mode
             tbAnimalID.ReadOnly = false;
             btnAdd.Enabled = true;
             btnSaveChanges.Enabled = false;
@@ -33,6 +35,7 @@ namespace Data_Manipulation_Part_Of_project
                 return;
             }
 
+            //Validating Animal ID by using Regex to match the pattern "WR-0001"
             if (!Regex.IsMatch(tbAnimalID.Text.ToUpper().Trim(), @"^WR-\d{4}$"))
             {
                 MessageBox.Show("Example of ID: WR-0001");
@@ -93,6 +96,8 @@ namespace Data_Manipulation_Part_Of_project
             if (isUpdated)
             {
                 MessageBox.Show("Animal data updated successfully.");
+
+                // Refresh the DataGridView to show all animal data after updating
                 DataTable dataTable = animal.GetAll();
                 dgvAnimalData.DataSource = dataTable;
             }
@@ -108,10 +113,10 @@ namespace Data_Manipulation_Part_Of_project
             // Ensure that the clicked cell is not a header cell
             if (e.RowIndex >= 0)
             {
-                // Get the selected row
-                DataGridViewRow viewRow = dgvAnimalData.Rows[e.RowIndex];
+               
+                DataGridViewRow viewRow = dgvAnimalData.Rows[e.RowIndex];// Get the clicked row
 
-                dgvAnimalData.CurrentRow.Selected = true;
+                dgvAnimalData.CurrentRow.Selected = true;// Highlight the selected row
 
                 // Populate the text boxes with the selected row's data, if the cell value is null, set the text box to an empty string
                 tbAnimalID.Text = viewRow.Cells["Animal ID"].Value?.ToString() ?? "";
@@ -141,10 +146,12 @@ namespace Data_Manipulation_Part_Of_project
             tbHousingUnit.Clear();
             tbSearch.Clear();
 
+            // Refresh the DataGridView to show all animal data
             DataTable dataTable = new DataTable();
             dataTable = animal.GetAll();
             dgvAnimalData.DataSource = dataTable;
 
+            // Set the Animal ID text box to be editable and enable the Add button, disable the Save Changes button; deactivating edit mode
             tbAnimalID.ReadOnly = false;
             btnAdd.Enabled = true;
             btnSaveChanges.Enabled = false;
@@ -161,7 +168,7 @@ namespace Data_Manipulation_Part_Of_project
             animal.animalID = tbAnimalID.Text;
             animal.name = tbName.Text;
 
-
+            // Prompt the user for confirmation before deleting the animal data
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {animal.name}, animal {animal.animalID}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result != DialogResult.Yes)
@@ -173,6 +180,8 @@ namespace Data_Manipulation_Part_Of_project
             if (isDeleted)
             {
                 MessageBox.Show("Animal data deleted successfully.");
+
+                // Refresh the DataGridView to show all animal data after deletion
                 DataTable dataTable = animal.GetAll();
                 dgvAnimalData.DataSource = dataTable;
 
@@ -264,10 +273,10 @@ namespace Data_Manipulation_Part_Of_project
                 return;
             }
 
-            animal.animalID = tbAnimalID.Text.Trim();
+            animal.animalID = tbAnimalID.Text.ToUpper().Trim();
             animal.name = tbName.Text.Trim();
             animal.species = tbSpecies.Text.Trim();
-            animal.age = int.TryParse(tbAge.Text, out age) ? age : 0;
+            animal.age = int.TryParse(tbAge.Text, out age) ? age : 0; // If parsing fails, set age to 0
             animal.score = score;
 
             animal.CalculateClassification();
@@ -278,7 +287,7 @@ namespace Data_Manipulation_Part_Of_project
             if (animal.AddAnimal())
             {
                 MessageBox.Show("Animal data added successfully.");
-                dgvAnimalData.DataSource = animal.GetAll();
+                dgvAnimalData.DataSource = animal.GetAll();// Refresh the DataGridView to show all animal data after adding a new animal
             }
             else
             {
