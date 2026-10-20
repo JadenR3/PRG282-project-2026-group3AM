@@ -288,8 +288,18 @@ namespace Data_Manipulation_Part_Of_project
 
         private void btnGenerateSummary_Click(object sender, EventArgs e)
         {
-            animal.GenerateSummary();
-            summaryForm.ShowDialog();
+         
+
+            bool success = animal.GenerateSummary();
+
+            if (success)
+            {
+                // Create a NEW instance so the constructor runs after the file is created
+                using (SummaryForm summaryForm = new SummaryForm())
+                {
+                    summaryForm.ShowDialog();
+                }
+            }
         }
     }
 }
